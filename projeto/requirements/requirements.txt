@@ -1,0 +1,5 @@
+# Criptografia (Ed25519, AES-GCM, etc.)
+cryptography>=42.0.0
+
+# Testes automatizados (se usares pytest nos ficheiros em test/)
+pytest>=8.0.0

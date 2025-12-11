@@ -1,0 +1,18 @@
+# Criptografia AEAD
+MODE=AES-GCM               
+KEYSIZE=256                
+BLOCKSIZE=4096             
+NONCE_MODE=RANDOM-96       
+NAME_MODE=SHA256           
+SEARCH_MODE=HMAC-DET       
+HMAC_KEYSIZE=256           
+KDF=HKDF-SHA256            
+AUTH_METHOD=AEAD
+DEDUP=ON                   
+
+# AES-GCM 256 (AEAD) — garante confidencialidade, integridade e autenticidade numa única primitiva.
+# NONCE_MODE=RANDOM-96 — AES-GCM usa nonces de 96 bits; o cliente assegura unicidade.
+# SEARCH_MODE=HMAC-DET — tokens determinísticos HMAC(key_search, keyword); cumpre o requisito de pesquisa segura.
+# NAME_MODE=SHA256(ciphertext) — nomes opacos no servidor (não revelam conteúdo).
+# DEDUP=ON — ativa deduplicação por cliente (nonce = SHA256(plaintext)[:12]); 
+#            OFF usa nonce aleatório e oferece semantic security total.

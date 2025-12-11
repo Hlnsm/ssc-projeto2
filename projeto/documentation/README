@@ -1,0 +1,40 @@
+Grupo P2
+Madalena Alves – 75150
+Henrique Monteiro – 72928
+
+Como executar o código do projeto:
+
+Todos os comandos devem ser executados a partir da raiz do repositório. Os três servidores devem ser iniciados em janelas/terminais separados.
+
+Iniciar os serviços:
+
+OAS – Authentication Server:
+python -m oas.oas_server
+
+OAMS – Authorization & Sharing Server:
+python -m oams.oams_server
+
+OBSS – Secure Storage Server:
+python -m server.server
+
+Executar o Cliente:
+
+O cliente suporta múltiplos utilizadores através da variável de ambiente CLIENT_SECAO.
+
+Windows PowerShell:
+$env:CLIENT_SECAO="userA"; python -m client.client
+
+Linux/macOS:
+CLIENT_SECAO="userA" python -m client.client
+
+Substituir "userA" por "userB", "default" ou outra sessão.
+
+
+Resumo dos comandos:
+
+OAS Server: python -m oas.oas_server
+OAMS Server: python -m oams.oams_server
+OBSS Server: python -m server.server
+Cliente: CLIENT_SECAO="userA" python -m client.client
+Cliente de Testes: python -m test.cltest
+teste python -m test.test_concurrency_obss --threads 10 --files-per-thread 5

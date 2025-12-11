@@ -1,0 +1,9 @@
+PUT Test/test_files/sample1.txt keyword1
+PUT Test/test_files/sample2.pdf keyword2
+LIST
+SEARCH keyword1
+SEARCH keyword2
+GET sample1.txt Test/downloads
+GET sample2.pdf Test/downloads
+GET CHECKINTEGRITY Test/downloads/sample1.txt
+GET CHECKINTEGRITY Test/downloads/sample2.pdf
